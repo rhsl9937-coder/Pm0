@@ -1,0 +1,28 @@
+name: Build NDS Game
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkitarm:latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build NDS
+        run: |
+          make
+
+      - name: Upload NDS Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: princess-life-ds
+          path: princess_life_ds.nds
