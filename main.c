@@ -20,30 +20,30 @@ static const char *actions[] = {"Study", "Work", "Rest", "Go Out"};
 
 static void draw(void) {
     consoleClear();
-    iprintf(" PRINCESS LIFE DS\\n");
-    iprintf(" Original raising sim\\n");
-    iprintf("----------------------\\n");
-    iprintf("Month: %d / 12\\n", game.month);
-    iprintf("Gold : %d G\\n", game.money);
-    iprintf("STR  : %d\\n", game.strength);
-    iprintf("INT  : %d\\n", game.intelligence);
-    iprintf("CHARM: %d\\n", game.charm);
-    iprintf("STRESS: %d\\n", game.stress);
-    iprintf("FAME : %d\\n", game.reputation);
-    iprintf("----------------------\\n");
+    iprintf(" PRINCESS LIFE DS\n");
+    iprintf(" Original raising sim\n");
+    iprintf("----------------------\n");
+    iprintf("Month: %d / 12\n", game.month);
+    iprintf("Gold : %d G\n", game.money);
+    iprintf("STR  : %d\n", game.strength);
+    iprintf("INT  : %d\n", game.intelligence);
+    iprintf("CHARM: %d\n", game.charm);
+    iprintf("STRESS: %d\n", game.stress);
+    iprintf("FAME : %d\n", game.reputation);
+    iprintf("----------------------\n");
     if (!game.ended) {
-        iprintf("Choose an action:\\n\\n");
+        iprintf("Choose an action:\n\n");
         for (int i = 0; i < 4; i++) {
-            iprintf("%s %s\\n", (i == selected) ? ">" : " ", actions[i]);
+            iprintf("%s %s\n", (i == selected) ? ">" : " ", actions[i]);
         }
-        iprintf("\\nUP/DOWN: select\\nA: confirm  B: help");
+        iprintf("\nUP/DOWN: select\nA: confirm  B: help");
     } else {
-        iprintf(" YEAR COMPLETE!\\n\\n");
-        if (game.intelligence >= 55) iprintf("Ending: Scholar\\n");
-        else if (game.charm >= 55) iprintf("Ending: Star\\n");
-        else if (game.money >= 250) iprintf("Ending: Merchant\\n");
-        else iprintf("Ending: New Beginning\\n");
-        iprintf("\\nPress START to restart.");
+        iprintf(" YEAR COMPLETE!\n\n");
+        if (game.intelligence >= 55) iprintf("Ending: Scholar\n");
+        else if (game.charm >= 55) iprintf("Ending: Star\n");
+        else if (game.money >= 250) iprintf("Ending: Merchant\n");
+        else iprintf("Ending: New Beginning\n");
+        iprintf("\nPress START to restart.");
     }
 }
 
